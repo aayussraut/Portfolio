@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.homepage {
+  height: 100vh;
+  background-image: url("./assets/home-cover.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.download-button {
+  animation: download infinite 1s ease-in;
+}
+
+@keyframes download {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
