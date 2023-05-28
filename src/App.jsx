@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Work from "./pages/Work";
 import Homepage from "./pages/homepage";
 import Skills from "./pages/skills";
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <div className="content">
         <Homepage />
         <Skills />
+        <Work />
       </div>
     </div>
   );
