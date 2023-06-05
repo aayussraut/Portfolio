@@ -1,7 +1,7 @@
 import { WorkCard } from "../components/Card";
 import Spotify from "../assets/spotify.png";
 import Portfolio from "../assets/portfolio.png";
-// import KYC from "../assets/kyc.png";
+import Blockchain from "../assets/blockchain.png";
 import Covid from "../assets/covid.png";
 export default function Work() {
   const work = [
@@ -15,13 +15,13 @@ export default function Work() {
       title: "Portfolio",
       description: "Portfolio built with React and TailwindCSS ",
       image: Portfolio,
-      link: "",
+      link: "https://github.com/aayussraut/Portfolio.git",
     },
     {
       title: "Decentralized KYC Sharing System",
       description:
         "A decentralized KYC sharing system built with React, Solidity and Bootstrap ",
-      image: "https://i.ibb.co/0jZ3qYH/spotify-clone.png",
+      image: Blockchain,
       link: "https://github.com/aayussraut/Decentralized-KYC-Sharing-System",
     },
     {
