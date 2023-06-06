@@ -24,8 +24,11 @@ export default function Experience() {
 
   return (
     <>
-      <div className="text-lg min-h-screen max-h-min bg-[#24242E] flex flex-col items-center text-white">
-        <h1 className="text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider">
+      <div
+        id="experience"
+        className="text-lg min-h-screen max-h-min bg-[#24242E] flex flex-col items-center text-white"
+      >
+        <h1 className="text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider ">
           Experience
         </h1>
         <div className="mt-16 flex flex-col justify-center">

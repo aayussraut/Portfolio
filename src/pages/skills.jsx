@@ -101,8 +101,11 @@ export default function Skills() {
 
   return (
     <>
-      <div className=" min-h-screen max:h-min bg-[#24242E] flex flex-col items-center text-white">
-        <h1 className=" text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider">
+      <div
+        id="skills"
+        className=" min-h-screen max:h-min bg-[#24242E] flex flex-col items-center text-white"
+      >
+        <h1 className=" text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider  whitespace-pre-line text-center ">
           My Expertise
         </h1>
 
