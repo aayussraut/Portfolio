@@ -19,9 +19,16 @@ export default function Homepage() {
 
         <div className="mt-4 flex animated">
           <HomePageButton text="Hire Me" bgColor="bg-purple-700" />
-          <HomePageButton text="Download CV" bgColor="border ">
-            <AiOutlineDownload className="ms-2 download-button" />
-          </HomePageButton>
+          <a
+            href="/Aayush_CV.pdf"
+            download="Aayush_CV"
+            target="_blank"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <HomePageButton text="Download CV" bgColor="border ">
+              <AiOutlineDownload className="ms-2 download-button" />
+            </HomePageButton>
+          </a>
         </div>
       </div>
 
