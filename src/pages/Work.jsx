@@ -36,7 +36,7 @@ export default function Work() {
       id="work"
       className=" min-h-screen max:h-min bg-[#24242E] flex flex-col items-center text-white"
     >
-      <h1 className=" text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider  whitespace-pre-line text-center ">
+      <h1 className=" xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider  whitespace-pre-line text-center ">
         My Recent Work
       </h1>
 
