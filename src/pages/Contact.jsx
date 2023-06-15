@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <>
       <div
-        id="experience"
+        id="contact"
         className="text-lg h-min bg-[#24242E] flex flex-col justify-between items-center text-white"
       >
         <div>
@@ -45,8 +45,8 @@ export default function Contact() {
                 icon={
                   <BsGeoAlt className="text-4xl group-hover:text-purple-600" />
                 }
-                title="Email Me"
-                contact="code.aayush01@gmail.com"
+                title="Location"
+                contact="Bhaktapur, Nepal"
                 href=""
               />
             </div>
