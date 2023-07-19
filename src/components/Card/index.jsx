@@ -83,7 +83,7 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
     <>
       <div
         onClick={handleClick}
-        className="bg-purple-900 px-6 py-2 flex justify-between"
+        className="bg-purple-900 px-6 py-2 flex justify-between  "
       >
         <p className="xxs:text-sm xs:text-lg  font-semibold md:me-24">
           {item.position} @ {item.office}
@@ -116,8 +116,12 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
               </a>
             </div>
 
-            <p className="xxs:text-sm xs:text-lg py-2">
-              Developing front end application on React.js
+            <p className="xxs:text-sm xs:text-lg py-2 ">
+              {item.description.map((desc, index) => (
+                <li key={index} className="">
+                  {desc}
+                </li>
+              ))}
             </p>
 
             <ul className="flex flex-wrap">
