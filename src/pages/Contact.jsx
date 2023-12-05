@@ -54,22 +54,32 @@ export default function Contact() {
               <h4 className="text-gray-400 font-semibold text-2xl xxs:text-center  xxs:mb-4 sm:mb-0">
                 Get in touch
               </h4>
-              <form className="flex flex-col gap-8">
+              <form
+                className="flex flex-col gap-8"
+                action={import.meta.env.VITE_FORMSPREE_ENDPOINT}
+                method="POST"
+              >
                 <input
                   className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
                   type="text"
+                  name="Name"
                   placeholder="Name"
                 />
                 <input
                   className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
                   type="email"
+                  name="Email"
                   placeholder="Email"
                 />
                 <textarea
                   className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
+                  name="Message"
                   placeholder="Message"
                 />
-                <button className="flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg group">
+                <button
+                  type="submit"
+                  className="flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg group"
+                >
                   Send
                   <AiOutlineSend className=" group-hover:translate-x-4" />
                 </button>
