@@ -4,6 +4,7 @@ import Work from "./pages/Work";
 import Homepage from "./pages/homepage";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
+
 function App() {
   return (
     <div className=" homepage relative">
