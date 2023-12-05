@@ -40,7 +40,7 @@ export const SkillCard = ({ skill, icon: Icon }) => {
       <h3 className=" font-semibold">{skill}</h3>
 
       <div>
-        <Icon className="  duration-200  group-hover:rotate-180" />
+        <Icon className="  duration-700  group-hover:rotate-[360deg]" />
       </div>
     </div>
   );
@@ -49,12 +49,12 @@ export const SkillCard = ({ skill, icon: Icon }) => {
 export const WorkCard = ({ title, description, image, link }) => {
   return (
     <>
-      <div className="bg-[#201F23] bg-opacity-60 p-6 rounded-lg shadow-md group md:odd:mb-10 md:even:mt-10">
+      <div className="bg-[#201F23] bg-opacity-60 p-6 rounded-lg shadow-md group">
         <div className="flex justify-center">
           <img
             src={image}
             alt={title}
-            className=" h-80 object-cover mb-4 rounded-lg group-hover:scale-110 "
+            className=" h-80 object-cover mb-4 rounded-xl group-hover:scale-105 "
           />
         </div>
 

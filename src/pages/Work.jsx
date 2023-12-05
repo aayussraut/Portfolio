@@ -42,9 +42,14 @@ export default function Work() {
 
       <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-20">
         {work.map((item, index) => (
-          <a href={item.link} key={index} target="_blank" rel="noreferrer">
+          <a
+            href={item.link}
+            key={index}
+            target="_blank"
+            rel="noreferrer"
+            className="md:odd:mb-10 md:even:mt-10"
+          >
             <WorkCard
-              //   key={index}
               title={item.title}
               description={item.description}
               image={item.image}

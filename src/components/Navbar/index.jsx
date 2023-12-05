@@ -41,7 +41,9 @@ export default function Navbar() {
       }`}
     >
       <div>
-        <img src={logo} alt="logo" className="xxs:my-3 md:my-0 h-11" />
+        <a href="#">
+          <img src={logo} alt="logo" className="xxs:my-3 md:my-0 h-11" />
+        </a>
       </div>
 
       {!open && (
