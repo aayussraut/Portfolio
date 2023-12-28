@@ -54,7 +54,7 @@ export const WorkCard = ({ title, description, image, link }) => {
           <img
             src={image}
             alt={title}
-            className=" h-80 object-cover mb-4 rounded-xl group-hover:scale-105 "
+            className="object-cover h-96 w-full mb-4 rounded-xl group-hover:scale-105 "
           />
         </div>
 
