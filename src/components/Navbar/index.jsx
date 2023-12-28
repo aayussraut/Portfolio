@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import logo from "../../assets/logo1.png";
 import { FaHamburger } from "react-icons/fa";
 import { AiOutlineHome } from "react-icons/ai";
@@ -17,9 +17,7 @@ export default function Navbar() {
     setOpen((prev) => !prev);
   };
 
-  // const closeSidebar = () => {
-  //   setOpen(false);
-  // };
+  const navbarRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,17 +25,25 @@ export default function Navbar() {
       setScrolled(isScrolled);
     };
 
+    const handleOutsideClick = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
 
   return (
     <nav
       className={`px-4 sm:py-3 flex align-middle fixed top-0 left-0 right-0 z-50 ${
-        scrolled ? "bg-slate-900 opacity-70 " : "sm:bg-transparent"
+        scrolled ? "bg-slate-900 sm:opacity-70 " : "sm:bg-transparent"
       }`}
     >
       <div>
@@ -56,8 +62,9 @@ export default function Navbar() {
 
       {open && (
         <div
+          ref={navbarRef}
           className={` fixed  
-           z-10 h-screen  bg-slate-900 opacity-90 flex items-center mx-auto font-semibold text-lg text-white right-0 px-3 w-1/2 transition-all duration-1000 ease-in-out shadow-lg
+           z-10 h-screen  bg-slate-900 opacity-90 flex items-center mx-auto font-semibold text-lg text-white right-0 px-3 w-1/2 transition-all duration-1000 ease-in-out shadow-lg sm:hidden
         `}
         >
           <div className="absolute top-0 right-0 p-3 ">
@@ -68,7 +75,7 @@ export default function Navbar() {
             />
           </div>
 
-          <ul className="flex justify-center xxs:flex-col xxs: sm:flex-row text-purple-400  transition-all duration-1000 ease-in-out shadow-lg ">
+          <ul className="flex justify-center xxs:flex-col xxs: sm:flex-row text-white transition-all duration-1000 ease-in-out shadow-lg gap-5">
             <NavItem
               href="#home"
               icon={<AiOutlineHome size={21} />}
