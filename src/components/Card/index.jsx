@@ -90,15 +90,21 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
         </p>
 
         <div className=" text-lg flex items-center font-semibold">
-          <p className="me-5 opacity-0 md:opacity-100">{item.date}</p>
+          <p className={`me-5  ${showModal ? "md:opacity-100" : "opacity-0"}`}>
+            {item.date}
+          </p>
           {!showModal && <IoMdAdd />}
           {showModal && <IoMdRemove />}
         </div>
       </div>
 
-      {showModal && (
-        <div className=" flex items-center justify-between bg-[#241D41] mt-5 p-6">
-          <div>
+      {
+        <div
+          className={` flex items-center justify-between bg-[#241D41] mt-5 px-6 max-h-0 transition-all duration-500 overflow-hidden ${
+            showModal ? "max-h-48" : "max-h-0"
+          } `}
+        >
+          <div className="py-6">
             <div className="flex gap-2 items-center">
               <IoLocation size={25} className="text-purple-600" />
               <span className="xxs:text-sm xs:text-lg text-gray-400">
@@ -118,13 +124,13 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
 
             <p className="xxs:text-sm xs:text-lg py-2 ">
               {item.description.map((desc, index) => (
-                <li key={index} className="">
+                <li key={index} className="ps-3">
                   {desc}
                 </li>
               ))}
             </p>
 
-            <ul className="flex flex-wrap">
+            <ul className="flex flex-wrap ps-2">
               {item.skills.map((skill, index) => (
                 <li
                   key={index}
@@ -144,7 +150,7 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
             />
           </div>
         </div>
-      )}
+      }
     </>
   );
 };
