@@ -2,6 +2,7 @@ import { WorkCard } from "../components/Card";
 import Spotify from "../assets/spotify.png";
 import Portfolio from "../assets/portfolio.png";
 import Blockchain from "../assets/blockchain.png";
+import BlogTalk from "../assets/blogtalk.png";
 import Covid from "../assets/covid.png";
 export default function Work() {
   const work = [
@@ -12,10 +13,10 @@ export default function Work() {
       link: "https://github.com/aayussraut/spotify-clone",
     },
     {
-      title: "Portfolio",
-      description: "Portfolio built with React and TailwindCSS ",
-      image: Portfolio,
-      link: "https://github.com/aayussraut/Portfolio.git",
+      title: "BlogTalk",
+      description: "A BlogApp with realtime chat built with React and Sails ",
+      image: BlogTalk,
+      link: "https://github.com/rabin245/sails-blog-app",
     },
     {
       title: "Decentralized KYC Sharing System",
