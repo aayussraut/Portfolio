@@ -85,7 +85,7 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
         onClick={handleClick}
         className="bg-purple-900 px-2 py-1 xs:px-6 xs:py-2 flex justify-between items-center "
       >
-        <p className="xxs:text-sm xs:text-lg  font-semibold me-24">
+        <p className="xxs:text-sm xs:text-lg  font-semibold lg:me-48">
           {item.position} @ {item.office}
         </p>
 
