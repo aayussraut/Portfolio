@@ -9,7 +9,7 @@ export default function Contact() {
     <>
       <div
         id="contact"
-        className="text-lg h-min bg-[#24242E] flex flex-col justify-between items-center text-white"
+        className="text-lg h-min bg-[#24242E] flex flex-col justify-between items-center text-white px-6 md:px-24 lg:px-0 xxl:px-0"
       >
         <div>
           <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-32 mb- font-semibold tracking-wider whitespace-pre-line text-center">
@@ -50,7 +50,7 @@ export default function Contact() {
                 href=""
               />
             </div>
-            <div className="sm:w-64 md:w-80 lg:w-96">
+            <div className="sm:w-64 md:w-72 lg:w-96">
               <h4 className="text-gray-400 font-semibold text-2xl xxs:text-center  xxs:mb-4 sm:mb-0">
                 Get in touch
               </h4>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import image from "../assets/optimum.webp";
 import { ExpCard } from "../components/Card";
 
@@ -45,7 +45,7 @@ export default function Experience() {
     <>
       <div
         id="experience"
-        className="text-lg h-min bg-[#24242E] flex flex-col items-center text-white px-5 md:px-0 "
+        className="text-lg h-min bg-[#24242E] flex flex-col items-center text-white px-6 md:px-24 lg:px-0 xxl:px-0"
       >
         <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider ">
           Experience

@@ -34,13 +34,13 @@ export default function Work() {
   return (
     <div
       id="work"
-      className=" min-h-screen max:h-min bg-[#24242E] flex flex-col items-center text-white px-5 md:px-0"
+      className=" min-h-screen max:h-min bg-[#24242E] flex flex-col items-center text-white px-5 md:px-24 xl:px-12 2xl:px-0"
     >
       <h1 className=" xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider  whitespace-pre-line text-center ">
         My Recent Work
       </h1>
 
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 gap-10 md:gap-20">
+      <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-0 lg:gap-20">
         {work.map((item, index) => (
           <a
             href={item.link}

@@ -103,7 +103,7 @@ export default function Skills() {
     <>
       <div
         id="skills"
-        className=" min-h-screen max:h-min bg-[#24242E] flex flex-col items-center text-white"
+        className=" min-h-screen max:h-min bg-[#24242E] flex flex-col items-center text-white px-5 md:px-24 xl:px-12 2xl:px-0"
       >
         <h1 className=" xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider  whitespace-pre-line text-center ">
           My Expertise
