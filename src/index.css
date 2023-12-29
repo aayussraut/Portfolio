@@ -28,7 +28,7 @@
 
 @keyframes slideIn {
   0% {
-    transform: translateY(100%);
+    transform: translateY(50px);
     opacity: 0;
   }
   100% {
@@ -38,5 +38,11 @@
 }
 
 .animated {
-  animation: slideIn 1.2s ease-in-out;
+  animation: slideIn 2s ease-in-out ;
 }
+
+.moon-img{
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px rgb(255,160,15,0.8);
+}
+

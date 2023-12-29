@@ -49,12 +49,12 @@ export const SkillCard = ({ skill, icon: Icon }) => {
 export const WorkCard = ({ title, description, image, link }) => {
   return (
     <>
-      <div className="bg-[#201F23] bg-opacity-60 p-6 rounded-lg shadow-md group">
-        <div className="flex justify-center">
+      <div className="bg-[#201F23] bg-opacity-60 p-6 rounded-lg shadow-md group ">
+        <div className="flex justify-center object-cover">
           <img
             src={image}
             alt={title}
-            className="object-cover h-96 w-full mb-4 rounded-xl group-hover:scale-105 "
+            className="object-cover mb-4 rounded-xl group-hover:scale-105 "
           />
         </div>
 
@@ -83,9 +83,9 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
     <>
       <div
         onClick={handleClick}
-        className="bg-purple-900 px-6 py-2 flex justify-between items-center "
+        className="bg-purple-900 px-2 py-1 xs:px-6 xs:py-2 flex justify-between items-center "
       >
-        <p className="xxs:text-sm xs:text-lg  font-semibold md:me-24">
+        <p className="xxs:text-sm xs:text-lg  font-semibold me-24">
           {item.position} @ {item.office}
         </p>
 
