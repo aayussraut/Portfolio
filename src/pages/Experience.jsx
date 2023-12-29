@@ -1,8 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import image from "../assets/optimum.webp";
 import { ExpCard } from "../components/Card";
-
+import { useInView } from "react-intersection-observer";
 export default function Experience() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-50px",
+  });
+
   const [selectedExp, setSelectedExp] = useState(null);
 
   const handleClick = (index) => {
@@ -47,18 +52,20 @@ export default function Experience() {
         id="experience"
         className="text-lg h-min bg-[#24242E] flex flex-col items-center text-white px-6 md:px-24 lg:px-0 xxl:px-0"
       >
-        <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider ">
-          Experience
-        </h1>
-        <div className="mt-16 flex flex-col justify-center w-4xl">
-          {exp.map((item, index) => (
-            <ExpCard
-              key={index}
-              item={item}
-              handleClick={() => handleClick(index)}
-              showModal={selectedExp === index}
-            />
-          ))}
+        <div ref={ref} className={`slide-in ${inView ? "visible" : ""}`}>
+          <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-28 font-semibold tracking-wider whitespace-pre-line text-center ">
+            Experience
+          </h1>
+          <div className="mt-16 flex flex-col justify-center w-4xl">
+            {exp.map((item, index) => (
+              <ExpCard
+                key={index}
+                item={item}
+                handleClick={() => handleClick(index)}
+                showModal={selectedExp === index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>

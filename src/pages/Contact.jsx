@@ -4,15 +4,22 @@ import { MdEmail } from "react-icons/md";
 import { BsGeoAlt } from "react-icons/bs";
 import { IoMdPaperPlane } from "react-icons/io";
 import { AiOutlineSend } from "react-icons/ai";
+import { useInView } from "react-intersection-observer";
+
 export default function Contact() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-50px",
+  });
+
   return (
     <>
       <div
         id="contact"
         className="text-lg h-min bg-[#24242E] flex flex-col justify-between items-center text-white px-6 md:px-24 lg:px-0 xxl:px-0"
       >
-        <div>
-          <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-32 mb- font-semibold tracking-wider whitespace-pre-line text-center">
+        <div ref={ref} className={`slide-in ${inView ? "visible" : ""}`}>
+          <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-28  font-semibold tracking-wider whitespace-pre-line text-center">
             Let's Connect
           </h1>
           <div className="h-max mt-16 flex xxs:flex-col sm:flex-row items-center xxs:gap-10 sm:gap-28  md:gap-48 lg:gap-64 xl:gap-96 justify-center">
@@ -50,40 +57,42 @@ export default function Contact() {
                 href=""
               />
             </div>
-            <div className="sm:w-64 md:w-72 lg:w-96">
-              <h4 className="text-gray-400 font-semibold text-2xl xxs:text-center  xxs:mb-4 sm:mb-0">
-                Get in touch
-              </h4>
-              <form
-                className="flex flex-col gap-8"
-                action={import.meta.env.VITE_FORMSPREE_ENDPOINT}
-                method="POST"
-              >
-                <input
-                  className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
-                  type="text"
-                  name="Name"
-                  placeholder="Name"
-                />
-                <input
-                  className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
-                  type="email"
-                  name="Email"
-                  placeholder="Email"
-                />
-                <textarea
-                  className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
-                  name="Message"
-                  placeholder="Message"
-                />
-                <button
-                  type="submit"
-                  className="flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg group"
+            <div ref={ref} className={`slide-in ${inView ? "visible" : ""}`}>
+              <div className="sm:w-64 md:w-72 lg:w-96">
+                <h4 className="text-gray-400 font-semibold text-2xl xxs:text-center  xxs:mb-4 sm:mb-0">
+                  Get in touch
+                </h4>
+                <form
+                  className="flex flex-col gap-8"
+                  action={import.meta.env.VITE_FORMSPREE_ENDPOINT}
+                  method="POST"
                 >
-                  Send
-                  <AiOutlineSend className=" group-hover:translate-x-4" />
-                </button>
-              </form>
+                  <input
+                    className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
+                    type="text"
+                    name="Name"
+                    placeholder="Name"
+                  />
+                  <input
+                    className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
+                    type="email"
+                    name="Email"
+                    placeholder="Email"
+                  />
+                  <textarea
+                    className="bg-transparent border-b-2 border-white focus:outline-none focus:border-purple-600"
+                    name="Message"
+                    placeholder="Message"
+                  />
+                  <button
+                    type="submit"
+                    className="flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg group"
+                  >
+                    Send
+                    <AiOutlineSend className=" group-hover:translate-x-4" />
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
