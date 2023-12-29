@@ -15,8 +15,14 @@ import {
   TbBrandGithub,
 } from "react-icons/tb";
 import { DiPostgresql } from "react-icons/di";
+import { useInView } from "react-intersection-observer";
 
 export default function Skills() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-50px",
+  });
+
   const skills = [
     {
       title: "HTML",
@@ -105,35 +111,37 @@ export default function Skills() {
         id="skills"
         className=" min-h-screen max:h-min bg-[#24242E] flex flex-col items-center text-white px-5 md:px-24 xl:px-12 2xl:px-0"
       >
-        <h1 className=" xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-32 font-semibold tracking-wider  whitespace-pre-line text-center ">
-          My Expertise
-        </h1>
+        <div ref={ref} className={`slide-in ${inView ? "visible" : ""}`}>
+          <h1 className=" xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-28 font-semibold tracking-wider  whitespace-pre-line text-center ">
+            My Expertise
+          </h1>
 
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-16">
-          {expertise.map((item, index) => (
-            <ExpertiseCard
-              icon={item.icon}
-              key={index}
-              title={item.title}
-              description={item.description}
-              skills={item.skills}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-16">
+            {expertise.map((item, index) => (
+              <ExpertiseCard
+                icon={item.icon}
+                key={index}
+                title={item.title}
+                description={item.description}
+                skills={item.skills}
+              />
+            ))}
+            <img
+              src={image}
+              alt="image"
+              className="absolute top-96 inset-0 m-auto opacity-10 z-0"
             />
-          ))}
-          <img
-            src={image}
-            alt="image"
-            className="absolute top-96 inset-0 m-auto opacity-10 z-0"
-          />
-        </div>
+          </div>
 
-        <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-12 font-semibold tracking-wider">
-          My Skills
-        </h1>
+          <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-28 font-semibold tracking-wider whitespace-pre-line text-center ">
+            My Skills
+          </h1>
 
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 z-20 justify-center">
-          {skills.map((skill, index) => (
-            <SkillCard key={index} skill={skill.title} icon={skill.icon} />
-          ))}
+          <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 z-20 justify-center">
+            {skills.map((skill, index) => (
+              <SkillCard key={index} skill={skill.title} icon={skill.icon} />
+            ))}
+          </div>
         </div>
       </div>
     </>
