@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
-import {
-  IoLogoGithub,
-  IoMdArrowRoundForward,
-  IoMdAdd,
-  IoMdRemove,
-} from "react-icons/io";
+import { IoLogoGithub, IoMdAdd, IoMdRemove } from "react-icons/io";
+
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+
 import { IoLocation, IoNavigateCircleOutline } from "react-icons/io5";
 export const ExpertiseCard = ({ icon: Icon, title, description, skills }) => {
   return (
@@ -46,32 +44,55 @@ export const SkillCard = ({ skill, icon: Icon }) => {
   );
 };
 
-export const WorkCard = ({ title, description, image, link }) => {
+export const WorkCard = ({
+  title,
+  description,
+  image,
+  githubLink,
+  projectDemoLink,
+}) => {
   return (
     <>
-      <div className="bg-[#201F23] bg-opacity-60 p-6 rounded-lg shadow-md group ">
-        <div className="flex justify-center object-cover">
+      <div className="bg-[#201F23] bg-opacity-60 p-6 rounded-lg shadow-md group  ">
+        <div className="relative flex justify-center object-cover w-full overflow-hidden ">
           <img
             src={image}
             alt={title}
-            className="object-cover mb-4 rounded-xl group-hover:scale-105 "
+            className="object-cover mb-4 rounded-xl group-hover:scale-105 group-hover:blur-[2px] z-0 md:h-[195px] xl:h-[300px] 2xl:h-[350px]"
           />
+
+          <div className="z-10 absolute  top-[40%]  opacity-0 group-hover:opacity-100 flex gap-5">
+            {projectDemoLink && (
+              <div className=" bg-purple-700/50 px-2 rounded-xl h-fit py-1  ">
+                <a
+                  href={projectDemoLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1 font-semibold text-purple-600"
+                >
+                  <MdOutlineRemoveRedEye size={45} color={"white"} />
+                </a>
+              </div>
+            )}
+            <div className="bg-purple-700/50  px-2 rounded-xl h-fit py-1 ">
+              <a
+                href={githubLink}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1 font-semibold text-purple-600"
+              >
+                <IoLogoGithub size={45} color={"white"} />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <h3 className="text-xl font-semibold mb-2 md:line-clamp-1 xl:line-clamp-none">
+          {title}
+        </h3>
 
-        <p className="before:opacity-100 after:opacity-0">{description}</p>
-
-        <p className="opacity-0 group-hover:opacity-100">
-          <a
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-1 font-semibold text-purple-600"
-          >
-            <IoLogoGithub />
-            See Project <IoMdArrowRoundForward />
-          </a>
+        <p className="before:opacity-100 after:opacity-0 h-11 overflow-hidden">
+          {description}
         </p>
       </div>
     </>
@@ -163,7 +184,8 @@ WorkCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  githubLink: PropTypes.string.isRequired,
+  projectDemoLink: PropTypes.string,
 };
 
 SkillCard.propTypes = {
