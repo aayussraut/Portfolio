@@ -1,6 +1,5 @@
 import { ExpertiseCard, SkillCard } from "../components/Card";
 import { FaReact, FaNodeJs } from "react-icons/fa";
-import { RiFlutterFill } from "react-icons/ri";
 import image from "../assets/skills-bg.webp";
 import {
   TbBrandHtml5,
@@ -79,12 +78,13 @@ export default function Skills() {
       icon: FaReact,
       title: "Front End Dev",
       description:
-        "Skilled in creating interactive web interfaces using HTML, CSS, JavaScript, React.js, Bootstrap, and Tailwind CSS.",
+        "Skilled in creating interactive web interfaces using HTML, CSS, JavaScript, React.js, Next,js, Bootstrap, and Tailwind CSS.",
       skills: [
         "HTML",
         "CSS",
         "JavaScript",
         "React.JS",
+        "Next.JS",
         "Bootstrap",
         "Tailwind",
       ],
@@ -94,14 +94,7 @@ export default function Skills() {
       title: "Back End Dev",
       description:
         "Skilled in Node.js, MongoDB, SQL, and Postgres for building robust server-side applications and RESTful APIs.",
-      skills: ["Node.JS", "MongoDB", "SQL", "Postgres"],
-    },
-    {
-      icon: RiFlutterFill,
-      title: "Flutter Dev",
-      description:
-        "Skilled in developing mobile apps and cross-platform solutions using the Flutter framework.",
-      skills: ["Flutter", "Android", "iOS"],
+      skills: ["Node.JS", "MongoDB", "SQL", "Postgres", "Prisma"],
     },
   ];
 
@@ -116,21 +109,23 @@ export default function Skills() {
             My Expertise
           </h1>
 
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-16">
-            {expertise.map((item, index) => (
-              <ExpertiseCard
-                icon={item.icon}
-                key={index}
-                title={item.title}
-                description={item.description}
-                skills={item.skills}
+          <div className="flex flex-col justify-center items-center mt-16 w-full">
+            <div className="relative flex flex-wrap gap-4">
+              {expertise.map((item, index) => (
+                <ExpertiseCard
+                  icon={item.icon}
+                  key={index}
+                  title={item.title}
+                  description={item.description}
+                  skills={item.skills}
+                />
+              ))}
+              <img
+                src={image}
+                alt="image"
+                className="absolute top-96 inset-0 m-auto opacity-10 z-0"
               />
-            ))}
-            <img
-              src={image}
-              alt="image"
-              className="absolute top-96 inset-0 m-auto opacity-10 z-0"
-            />
+            </div>
           </div>
 
           <h1 className="xxs:text-4xl sm:text-6xl xxs:mt-16 md:mt-28 font-semibold tracking-wider whitespace-pre-line text-center ">
