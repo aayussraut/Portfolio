@@ -19,7 +19,7 @@ export default function Experience() {
       position: "Software Engineer",
       location: "Thapagaun, Kathmandu",
       office: "Optimum Futurist Pvt. Ltd.",
-      date: "July 2023 - Present",
+      date: "July 2023 - Jan 2024",
       office_site: "optimumfuturist.com",
       link: "https://optimumfuturist.com/",
       description: [
