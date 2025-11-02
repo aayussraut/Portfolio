@@ -1,5 +1,6 @@
 import { ExpertiseCard, SkillCard } from "../components/Card";
 import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiSelenium } from "react-icons/si";
 import image from "../assets/skills-bg.webp";
 import {
   TbBrandHtml5,
@@ -95,6 +96,13 @@ export default function Skills() {
       description:
         "Skilled in Node.js, MongoDB, SQL, and Postgres for building robust server-side applications and RESTful APIs.",
       skills: ["Node.JS", "MongoDB", "SQL", "Postgres", "Prisma"],
+    },
+    {
+      icon: SiSelenium,
+      title: "Automation Testing",
+      description:
+        "Experienced in creating automated test scripts using Selenium and JMeter to ensure software quality and performance.",
+      skills: ["Selenium", "JMeter", "C#", "Java"],
     },
   ];
 
