@@ -1,5 +1,6 @@
 import { useState } from "react";
-import image from "../assets/optimum.webp";
+import optimumLogo from "../assets/optimum.webp";
+import veriskLogo from "../assets/verisk_logo.webp";
 import { ExpCard } from "../components/Card";
 import { useInView } from "react-intersection-observer";
 export default function Experience() {
@@ -16,6 +17,34 @@ export default function Experience() {
 
   const exp = [
     {
+      position: "Associate Software Engineer",
+      location: "Prasiddhi Tower, Pulchowk",
+      office: "VERISK ANALYTICS",
+      date: "Oct 2025 - Present",
+      office_site: "verisk.com",
+      link: "https://www.verisknepal.com.np/",
+      description: [
+        "Will update soon. ",
+        // "Developed automated test scripts using Selenium and JMeter.",
+      ],
+      skills: ["C#", "Selenium", "Jmeter"],
+      logo: veriskLogo,
+    },
+    {
+      position: "Trainee",
+      location: "Prasiddhi Tower, Pulchowk",
+      office: "VERISK ANALYTICS",
+      date: "April 2025 - Oct 2025",
+      office_site: "verisk.com",
+      link: "https://www.verisknepal.com.np/",
+      description: [
+        "Will update soon. ",
+        // "Developed automated test scripts using Selenium and JMeter.",
+      ],
+      skills: ["Java", "React.JS", "Selenium", "Jmeter"],
+      logo: veriskLogo,
+    },
+    {
       position: "Software Engineer",
       location: "Thapagaun, Kathmandu",
       office: "Optimum Futurist Pvt. Ltd.",
@@ -27,7 +56,7 @@ export default function Experience() {
         "Building RESTful APIs using Sails.JS, MySQL, and Sequelize",
       ],
       skills: ["JavaScript", "React.JS", "Sails.JS"],
-      logo: image,
+      logo: optimumLogo,
     },
     {
       position: "Software Engineer Intern",
@@ -42,7 +71,7 @@ export default function Experience() {
         "Authentication and authorization with sessions, JWT, and OAuth2.",
       ],
       skills: ["JavaScript", "React.JS", "Bootstrap"],
-      logo: image,
+      logo: optimumLogo,
     },
   ];
 
