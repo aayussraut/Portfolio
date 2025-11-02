@@ -21,7 +21,7 @@ export default function Homepage() {
         </h1>
 
         <h4 className=" font-semibold xxs:text-xs sm:text-sm md:text-xl lg:text-3xl tracking-widest whitespace-pre-line text-center animated ">
-          SOFTWARE ENGINEER, FRONTEND & BACKEND DEVELOPER
+          SOFTWARE ENGINEER
         </h4>
         <div className="flex gap-4 mt-4 animated">
           <a
@@ -61,7 +61,7 @@ export default function Homepage() {
         <div className="mt-4 flex animated">
           <HomePageButton text="Hire Me" bgColor="bg-purple-700" />
           <a
-            href="/Aayush_CV.pdf"
+            href="/CV.pdf"
             download="Aayush_CV"
             target="_blank"
             style={{ textDecoration: "none", color: "white" }}
