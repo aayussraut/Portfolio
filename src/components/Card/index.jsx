@@ -104,14 +104,14 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
     <>
       <div
         onClick={handleClick}
-        className="bg-purple-900 px-2 py-1 xs:px-6 xs:py-2 flex justify-between items-center "
+        className="bg-purple-900 px-2 py-4 xs:px-6 xs:py-2 flex justify-between items-center "
       >
         <p className="xxs:text-sm xs:text-lg  font-semibold lg:me-48">
           {item.position} @ {item.office}
         </p>
 
         <div className=" text-lg flex items-center font-semibold">
-          <p className="me-5 opacity-0 md:opacity-100">{item.date}</p>
+          <p className="me-5 hidden md:block">{item.date}</p>
           {!showModal && <IoMdAdd />}
           {showModal && <IoMdRemove />}
         </div>
@@ -165,7 +165,7 @@ export const ExpCard = ({ item, handleClick, showModal }) => {
             <img
               src={item.logo}
               alt="logo"
-              className="opacity-0 xs:opacity-100 h-32 object-cover rounded-lg group-hover:scale-110 "
+              className="hidden xs:block h-32 w-32 object-contain rounded-lg group-hover:scale-110 "
             />
           </div>
         </div>
